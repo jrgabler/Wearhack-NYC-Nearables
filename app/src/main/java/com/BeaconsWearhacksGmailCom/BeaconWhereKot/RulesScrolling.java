@@ -17,4 +17,6 @@ public class RulesScrolling extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 
     }
+
+
 }
