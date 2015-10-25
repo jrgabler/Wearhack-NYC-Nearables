@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Campus Sprawl</string>
+    <string name='button_continue'>Take a photo!  >></string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string-array name="page_titles_array">
+        <item>Home</item>
+        <item>Search</item>
+        <item>Points of Interest</item>
+        <item>Scoreboard</item>
+    </string-array>
+</resources>
