@@ -46,5 +46,12 @@
         android:textAlignment="center"
         style="?android:attr/borderlessButtonStyle" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/button_continue"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView2" />
+
 </RelativeLayout>
-<!-- From: file:/C:/Users/Julianna%20Rose/AndroidStudioProjects/stuff/BeaconWhereKot/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/C:/Users/Julianna%20Rose/AndroidStudioProjects/BeaconWhereKot/wearhack-nyc/app/src/main/res/layout/activity_main.xml -->

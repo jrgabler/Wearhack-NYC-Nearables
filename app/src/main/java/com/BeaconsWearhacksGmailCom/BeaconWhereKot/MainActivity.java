@@ -1,7 +1,14 @@
 package com.BeaconsWearhacksGmailCom.BeaconWhereKot;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.media.Image;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -22,6 +29,8 @@ import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.EstimoteCloudBeaconD
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.ProximityContentManager;
 import com.estimote.sdk.cloud.model.Color;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +39,7 @@ public class MainActivity extends AppCompatActivity
         implements ActivityCompat.OnRequestPermissionsResultCallback {
 
     private static final String TAG = "MainActivity";
+    private static final int CAM_REQUEST = 1313;
     private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 0;
     private static final Map<Color, Integer> BACKGROUND_COLORS = new HashMap<>();
     static {
@@ -39,6 +49,8 @@ public class MainActivity extends AppCompatActivity
     }
     private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(160, 169, 172);
     private ProximityContentManager proximityContentManager;
+    private ImageView photoTaken; //added imageview for the camera to show
+    private Button upload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +113,10 @@ public class MainActivity extends AppCompatActivity
                     btn.startAnimation(animation);
                     btn.setVisibility(View.VISIBLE);
 
+                    photoTaken = (ImageView) findViewById(R.id.imageView2); //awoodside96
+
+                    btn.setOnClickListener(new btnTakeSelfieClicker()); //awoodside96
+
                     //set the image view to the beacon image for the imageView item
                     ImageView img= (ImageView) findViewById(R.id.imageView);
                     img.setImageResource(R.drawable.beacon);
@@ -124,6 +140,53 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
+    /***************** PHOTOS FUNC ********************/
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CAM_REQUEST && resultCode == RESULT_OK){
+            //setPic(); //decode picture file when result is returned
+            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+            photoTaken.setImageBitmap(thumbnail); //creates a thumbnail preview
+            upload.setVisibility(Button.VISIBLE);
+
+            Uri tempUri = getImageUri(getApplicationContext(), thumbnail);
+            new File(getRealPathFromURI(tempUri));
+
+            System.out.print(photoTaken);
+        }
+    }
+
+    protected Uri getImageUri(Context inContext, Bitmap inImage){ //upload server
+        ByteArrayOutputStream b = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, b);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    protected String getRealPathFromURI(Uri uri){ //upload server
+        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+        int idx = 0;
+        if (cursor != null) {
+            cursor.moveToFirst();
+            idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+        }
+        return cursor.getString(idx);
+    }
+
+    class btnTakeSelfieClicker implements Button.OnClickListener {
+
+        @Override
+        public void onClick(View v){
+            Intent cameraInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if(cameraInt.resolveActivity(getPackageManager()) != null) {
+                startActivityForResult(cameraInt, CAM_REQUEST);
+            }
+        }
+    }
+    /*************************************************/
 
     @Override
     protected void onPause() {
