@@ -9,7 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:background="#FFA0A9AC">
+    android:background="#ffffff">
+
 
     <ImageView
         android:layout_width="wrap_content"
@@ -28,8 +29,8 @@
         android:id="@+id/textView"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
+        android:textColor="#2d1441"
         android:textAlignment="center" />
 
     <Button
@@ -40,9 +41,10 @@
         android:onClick="sendMessage"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"
+        android:textColor="#2d1441"
         android:visibility="invisible"
+
         android:textAlignment="center"
         style="?android:attr/borderlessButtonStyle" />
 

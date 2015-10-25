@@ -2,4 +2,19 @@
     <string name="app_name">Campus Sprawl</string>
     <string name='button_continue'>Take a photo!  >></string>
     <string name="button_upload">Upload was a Success!\n Go back >></string>
+    <string name="title_activity_rules_display">RulesDisplayActivity</string>
+    <string name="title_activity_rules_scrolling">Game Rules</string>
+    <string name="large_text">
+        "\n1. Please enable bluetooth for the duration of the game.
+        \n2. Keeping the app open will provide the best experience, but is not necessary.
+        \n3. Campus Sprawl will alert you when you are within 50ft of the item.
+        \nIt is up to you to identify the item
+        \n4. Take and upload a photo through the app to gain points
+        \n5. All points are awarded by the admin and may take a little time to appear\
+        \n6. See the scoreboard to see how you compare to other teams
+        \n7. The Checkpoints menu item will display all checkpoints you must find and their
+        respective statuses
+        \n8. Find a team of at least 2 people and have fun!\n"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>

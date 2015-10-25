@@ -44,6 +44,16 @@
         </activity>
         <activity android:name="com.BeaconsWearhacksGmailCom.BeaconWhereKot.DisplayPhotoUploaded" >
         </activity>
+        <activity
+            android:name="com.BeaconsWearhacksGmailCom.BeaconWhereKot.RulesDisplayActivity"
+            android:label="@string/title_activity_rules_display"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="com.BeaconsWearhacksGmailCom.BeaconWhereKot.RulesScrolling"
+            android:label="@string/title_activity_rules_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
 
         <service
             android:name="com.estimote.sdk.service.BeaconService"

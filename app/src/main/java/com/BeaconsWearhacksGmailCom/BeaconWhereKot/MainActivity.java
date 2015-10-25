@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.BeaconID;
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.EstimoteCloudBeaconDetails;
@@ -45,11 +46,11 @@ public class MainActivity extends AppCompatActivity
     private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 0;
     private static final Map<Color, Integer> BACKGROUND_COLORS = new HashMap<>();
     static {
-        BACKGROUND_COLORS.put(Color.ICY_MARSHMALLOW, android.graphics.Color.rgb(109, 170, 199));
-        BACKGROUND_COLORS.put(Color.BLUEBERRY_PIE,   android.graphics.Color.rgb( 98,  84, 158));
-        BACKGROUND_COLORS.put(Color.MINT_COCKTAIL,   android.graphics.Color.rgb(155, 186, 160));
+        BACKGROUND_COLORS.put(Color.ICY_MARSHMALLOW, android.graphics.Color.rgb(255, 255, 255)); //android.graphics.Color.rgb(109, 170, 199));
+        BACKGROUND_COLORS.put(Color.BLUEBERRY_PIE, android.graphics.Color.rgb(255, 255, 255)); //android.graphics.Color.rgb( 98,  84, 158));
+        BACKGROUND_COLORS.put(Color.MINT_COCKTAIL,   android.graphics.Color.rgb(255,255,255));//android.graphics.Color.rgb(155, 186, 160));
     }
-    private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(160, 169, 172);
+    private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(255,255,255);
     private ProximityContentManager proximityContentManager;
     public ImageView photoTaken; //added imageview for the camera to show
     private Bitmap thumbnail;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //TODO break down into modular functions and what not
     private void onPermissionGranted() {
         final Button btn = (Button) findViewById(R.id.button_continue);
         Log.d(TAG, "Permission to access user's location granted, initializing ProximityContentManager");
@@ -126,7 +129,7 @@ public class MainActivity extends AppCompatActivity
 
 
                 } else {
-                    text = "No beacons in range.";
+                    text = "No checkpoints in range. Keep walking!";
                     backgroundColor = null;
 
                     //gets rid of the animation and sets button to invisible
