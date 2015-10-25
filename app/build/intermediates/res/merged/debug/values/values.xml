@@ -286,6 +286,7 @@
     <!-- From: file:/C:/Users/Julianna%20Rose/AndroidStudioProjects/BeaconWhereKot/wearhack-nyc/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="button_continue">Take a photo!  >></string>
+    <string name="button_upload">Upload was a Success!\n Go back >></string>
     <!-- From: file:/C:/Users/Julianna%20Rose/AndroidStudioProjects/BeaconWhereKot/wearhack-nyc/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>

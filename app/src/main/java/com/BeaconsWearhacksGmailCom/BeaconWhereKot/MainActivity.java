@@ -1,6 +1,7 @@
 package com.BeaconsWearhacksGmailCom.BeaconWhereKot;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,6 +23,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.BeaconID;
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.EstimoteCloudBeaconDetails;
@@ -49,8 +51,8 @@ public class MainActivity extends AppCompatActivity
     }
     private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(160, 169, 172);
     private ProximityContentManager proximityContentManager;
-    private ImageView photoTaken; //added imageview for the camera to show
-    private Button upload;
+    public ImageView photoTaken; //added imageview for the camera to show
+    private Bitmap thumbnail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,6 +123,8 @@ public class MainActivity extends AppCompatActivity
                     ImageView img= (ImageView) findViewById(R.id.imageView);
                     img.setImageResource(R.drawable.beacon);
 
+
+
                 } else {
                     text = "No beacons in range.";
                     backgroundColor = null;
@@ -148,40 +152,28 @@ public class MainActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == CAM_REQUEST && resultCode == RESULT_OK){
             //setPic(); //decode picture file when result is returned
-            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-            photoTaken.setImageBitmap(thumbnail); //creates a thumbnail preview
-            upload.setVisibility(Button.VISIBLE);
+            thumbnail = (Bitmap) data.getExtras().get("data");
 
-            Uri tempUri = getImageUri(getApplicationContext(), thumbnail);
-            new File(getRealPathFromURI(tempUri));
-
-            System.out.print(photoTaken);
+           // showUpload(this);
+            Context context = getApplicationContext();
+            Toast.makeText(context, "Photo upload was a success", Toast.LENGTH_SHORT).show();
         }
     }
-
-    protected Uri getImageUri(Context inContext, Bitmap inImage){ //upload server
-        ByteArrayOutputStream b = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, b);
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
-    }
-
-    protected String getRealPathFromURI(Uri uri){ //upload server
-        Cursor cursor = getContentResolver().query(uri, null, null, null, null);
-        int idx = 0;
-        if (cursor != null) {
-            cursor.moveToFirst();
-            idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-        }
-        return cursor.getString(idx);
-    }
+//upload show later
+//    private void showUpload(Activity act){
+//        if(thumbnail != null) {
+//            Intent photoIntent = new Intent(this, DisplayPhotoUploaded.class);
+//            photoIntent.putExtra("bitmap-thumbnail", thumbnail);
+//            startActivityForResult(photoIntent, 134);
+//        }
+//    }
 
     class btnTakeSelfieClicker implements Button.OnClickListener {
 
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             Intent cameraInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if(cameraInt.resolveActivity(getPackageManager()) != null) {
+            if (cameraInt.resolveActivity(getPackageManager()) != null) {
                 startActivityForResult(cameraInt, CAM_REQUEST);
             }
         }

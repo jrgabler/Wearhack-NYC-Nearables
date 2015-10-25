@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Campus Sprawl</string>
     <string name='button_continue'>Take a photo!  >></string>
+    <string name="button_upload">Upload was a Success!\n Go back >></string>
 </resources>

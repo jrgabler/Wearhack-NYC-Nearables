@@ -42,6 +42,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.BeaconsWearhacksGmailCom.BeaconWhereKot.DisplayPhotoUploaded" >
+        </activity>
 
         <service
             android:name="com.estimote.sdk.service.BeaconService"
