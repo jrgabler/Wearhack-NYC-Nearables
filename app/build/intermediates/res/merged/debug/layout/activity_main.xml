@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
@@ -16,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:id="@+id/imageView"
-        android:src="@drawable/nobeacon"
+        android:src="@drawable/beacon"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp" />
@@ -47,7 +46,5 @@
         android:textAlignment="center"
         style="?android:attr/borderlessButtonStyle" />
 
-
-
 </RelativeLayout>
-<!-- From: file:/C:/Users/Julianna%20Rose/AndroidStudioProjects/BeaconWhereKot/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/C:/Users/Julianna%20Rose/AndroidStudioProjects/stuff/BeaconWhereKot/app/src/main/res/layout/activity_main.xml -->

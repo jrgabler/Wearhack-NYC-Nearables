@@ -2,39 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\classes-dd9221d4dcb2da057808d76b7912fc879f983bf3.jar" />
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-6caa1fe4da30cf2cc1676a54cb9890359b7ae5e4.jar" />
     </item>
     <item
-        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jar="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-24c46cbde714be0842274322039416f341dd73a0.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\classes-1a0e850f05627dbcb2ce88aa26d32b6dece07009.jar" />
     </item>
     <item
-        jar="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jar="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\exploded-aar\com.estimote\sdk\0.9.3\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-567c1569903e58d7340a4a6a89c97dc9fb9cf6d2.jar" />
+        sha1="bce217cbb1e181e64e39d45a085dea4279c93a37">
+        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\classes-13b5aa9fec0a59cf45e985fa71415775a8cb27f6.jar" />
     </item>
     <item
-        jar="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jar="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="076c7d9e22cc325b8008ff799e0c06dfb8eefdf3">
-        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-ae32ba697eaefc205c1958332b92551908852d19.jar" />
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\classes-376ade79623b6b9c9b8cce902909ff947a28c227.jar" />
     </item>
     <item
-        jar="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.0\jars\classes.jar"
+        jar="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="1a57337a520bf40b9ad1e074cb780527dffa1aac">
-        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\classes-442cf2972654d257fe43ddb504bb5bc4bfcc391b.jar" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-a190a649ff0f93f4789c2e6a3d02b568fac5e809.jar" />
+    </item>
+    <item
+        jar="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\Julianna Rose\AndroidStudioProjects\stuff\BeaconWhereKot\app\build\intermediates\pre-dexed\debug\classes-7e535d21963ccd5bdbf311528e3d6d1dd91c0b80.jar" />
     </item>
 
 </items>

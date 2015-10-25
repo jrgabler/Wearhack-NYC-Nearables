@@ -3,21 +3,19 @@ package com.BeaconsWearhacksGmailCom.BeaconWhereKot;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.BeaconID;
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.EstimoteCloudBeaconDetails;
 import com.BeaconsWearhacksGmailCom.BeaconWhereKot.estimote.EstimoteCloudBeaconDetailsFactory;
@@ -41,9 +39,6 @@ public class MainActivity extends AppCompatActivity
     }
     private static final int BACKGROUND_COLOR_NEUTRAL = android.graphics.Color.rgb(160, 169, 172);
     private ProximityContentManager proximityContentManager;
-    private String[] mNavigationDrawerItemTitles;
-    private DrawerLayout mDrawerLayout;
-    private ListView mDrawerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                 Integer backgroundColor;
                 if (content != null) {
                     EstimoteCloudBeaconDetails beaconDetails = (EstimoteCloudBeaconDetails) content;
-                    text = "You're in " + beaconDetails.getBeaconName() + "'s range!";
+                    text = "You found the " + beaconDetails.getBeaconName() + " checkpoint!";
                     backgroundColor = BACKGROUND_COLORS.get(beaconDetails.getBeaconColor());
 
                     //Animate the button to flash when viewable (Visible)
@@ -109,9 +104,11 @@ public class MainActivity extends AppCompatActivity
                     //set the image view to the beacon image for the imageView item
                     ImageView img= (ImageView) findViewById(R.id.imageView);
                     img.setImageResource(R.drawable.beacon);
+
                 } else {
                     text = "No beacons in range.";
                     backgroundColor = null;
+
                     //gets rid of the animation and sets button to invisible
                     btn.clearAnimation();
                     btn.setVisibility(View.INVISIBLE);
@@ -119,7 +116,6 @@ public class MainActivity extends AppCompatActivity
                     //set the image view to the nobeacon image for the imageView item
                     ImageView img= (ImageView) findViewById(R.id.imageView);
                     img.setImageResource(R.drawable.nobeacon);
-
 
                 }
                 ((TextView) findViewById(R.id.textView)).setText(text);
