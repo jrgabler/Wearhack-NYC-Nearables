@@ -1,4 +1,4 @@
-#Campus Sprawl
+#Campus Sprawl:Nearables Scavenger Hunt
 
 ##Introduction
 Campus Sprawl was designed within a 24 hour period at the WearHack NYC 2015 hackathon. All three members had no prior experience with Estimote Nearables or with writing native Android applications / Android Studio. This was our first hackathon experience as well.
